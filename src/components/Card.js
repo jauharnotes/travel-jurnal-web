@@ -1,19 +1,19 @@
-export default function Card() {
+export default function Card(props) {
     return (
         <div className="card--container">
             <div className="card">
                 <div className="card--right">
-                    <img src="./images/img-1.png" alt="img" />
+                    <img src={props.item.coverImg} alt="img" />
                 </div>
                 <div className="card--left">
                     <div className="card--location">
                         <img src="./images/location.png" alt="location" />
-                        <h2>JAPAN</h2>
-                        <a href="location">View on Google Maps</a>
+                        <h2>{props.item.location.toUpperCase()}</h2>
+                        <a href="location">{props.item.maps}</a>
                     </div>
-                    <h3 className="card--title">Mount Fuji</h3>
-                    <p className="card--date">12 Jan, 2021 - 24 Jan, 2021</p>
-                    <p className="card--desc">Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.</p>
+                    <h3 className="card--title">{props.item.title}</h3>
+                    <p className="card--date">{props.item.date}</p>
+                    <p className="card--desc">{props.item.description}</p>
                 </div>
             </div>
             <hr />
